@@ -2,28 +2,51 @@
 <html>
 
 <head>
-  <title>My Blog App</title>
+  <title>FinTech Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Bootstrap cdn -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/journal/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/flatly/bootstrap.min.css"> -->
 
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sketchy/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lumen/bootstrap.min.css">
 </head>
 
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="mainNav">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">🌐Daily Blog Posts🌐</a>
+      <a class="navbar-brand" href="{% url 'home' %}">🌐Avery's RL News Website🌐</a>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          
+          <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="#">Welcome, {{user.username}}</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="/add_post">Add Post</a>
+          </li>
+      
+          <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="/logout">Logout</a>
+          </li>
+          
+          {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="/login">Login</a>
+          </li>
+
+          {% endif %}
           <li class="nav-item text-black">
             <a class="nav-link text-black font-weight-bold" href="#">Reports</a>
           </li>
+
           <li class="nav-item text-black">
             <a class="nav-link text-black font-weight-bold" href="#">Policy</a>
           </li>
+
           <li class="nav-item text-black">
             <a class="nav-link text-black font-weight-bold" href="#">Contact</a>
           </li>
@@ -36,7 +59,7 @@
   {% endblock content %}
   <!-- Footer -->
   <footer class="py-3 bg-grey">
-    <p class="m-0 text-dark text-center ">Copyright &copy; 2021 My Blog App </p>
+    <p class="m-0 text-dark text-center ">Copyright &copy; 2022 My News Site </p>
   </footer>
 </body>
 

@@ -6,8 +6,10 @@
     <div class="row">
       <div class=" col-md-8 col-md-10 mx-auto">
         <div class="site-heading">
-          <h3 class=" site-heading my-4 mt-3 text-black"> Welcome to My Blog ✍️ </h3>
-          <p class="text-dark">Django is Awesome ✨✨✨ </p>
+          <h1 class=" site-heading my-4 mt-3 text-black"> Share a News Story </h1>
+          <h4 class="text-dark"> [WARNING] Interesting Content Below!</h4>
+          <p class="text-dark"> Current Number of Posts: {{ post_count }}</p>
+          <br/>
         </div>
       </div>
     </div>
@@ -23,7 +25,7 @@
           <h2 class="card-title">{{ post.title }}</h2>
           <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
           <p class="card-text">{{post.content|slice:":200"}}</p>
-          <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+          <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Read More &rarr;</a>
         </div>
       </div>
       {% endfor %}
