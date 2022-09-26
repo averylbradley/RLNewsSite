@@ -1,7 +1,7 @@
 import os
-import django_heroku
-import dj_database_url
-from decouple import config
+#import django_heroku
+#import dj_database_url
+#from decouple import config
 
 from pathlib import Path
 
@@ -122,4 +122,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
