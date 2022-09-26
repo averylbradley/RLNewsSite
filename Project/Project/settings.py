@@ -5,7 +5,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ns)7*m9mz-jbyal4qv0izr&2c-6loop)qkq!r1!r8z7)oukz5i'
 
